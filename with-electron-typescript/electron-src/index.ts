@@ -1,4 +1,3 @@
-// Native
 import { join } from "path";
 import { format } from "url";
 
@@ -12,13 +11,14 @@ app.on("ready", async () => {
   await prepareNext("./renderer");
 
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 700,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
       preload: join(__dirname, "preload.js"),
     },
+    icon: join(__dirname, "../icons/favicon.ico"),
   });
 
   const url = isDev
